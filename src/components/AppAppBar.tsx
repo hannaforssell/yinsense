@@ -12,7 +12,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 import CloseRoundedIcon from '@mui/icons-material/CloseRounded';
 
 
-export default function AppAppBar({ changeContent = (_content: string) => {} }) {
+export default function AppAppBar({ changeContent = (_content: string) => { } }) {
     const [open, setOpen] = React.useState(false);
 
     const toggleDrawer = (newOpen: boolean) => () => {
@@ -36,22 +36,27 @@ export default function AppAppBar({ changeContent = (_content: string) => {} }) 
                             LOGO
                         </Button>
                         <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
-                            <Button onClick={() => { changeContent('Home')}} variant="text" color="primary" size="large">
+                            <Button onClick={() => { changeContent('Home') }} variant="text" color="primary" size="large">
                                 Home
                             </Button>
-                            <Button onClick={() => { changeContent('About')}} variant="text" color="primary" size="large">
+                            <Button onClick={() => { changeContent('About') }} variant="text" color="primary" size="large">
                                 About
                             </Button>
-                            <Button onClick={() => { changeContent('Services')}} variant="text" color="primary" size="large">
+                            <Button onClick={() => { changeContent('Services') }} variant="text" color="primary" size="large">
                                 Services
                             </Button>
-                            <Button onClick={() => { changeContent('Contact')}} variant="text" color="primary" size="large" sx={{ minWidth: 0 }}>
+                            <Button onClick={() => { changeContent('Contact') }} variant="text" color="primary" size="large" sx={{ minWidth: 0 }}>
                                 Contact
                             </Button>
                         </Box>
                     </Box>
                     <Box>
-                        <Button color="primary" variant="contained" size="small">
+                        <Button color="primary" variant="contained" size="small" sx={{
+                            display: {
+                                xs: "none",
+                                md: "inline-flex",
+                            },
+                        }}>
                             Sign up for newsletter
                         </Button>
                     </Box>
@@ -80,10 +85,22 @@ export default function AppAppBar({ changeContent = (_content: string) => {} }) 
                                         <CloseRoundedIcon />
                                     </IconButton>
                                 </Box>
-                                <MenuItem>Home</MenuItem>
-                                <MenuItem>About</MenuItem>
-                                <MenuItem>Services</MenuItem>
-                                <MenuItem>Contact</MenuItem>
+                                <MenuItem onClick={() => {
+                                    setOpen(false);
+                                    changeContent('Home');
+                                }}>Home</MenuItem>
+                                <MenuItem onClick={() => {
+                                    setOpen(false);
+                                    changeContent('About');
+                                }}>About</MenuItem>
+                                <MenuItem onClick={() => {
+                                    setOpen(false);
+                                    changeContent('Services');
+                                }}>Services</MenuItem>
+                                <MenuItem onClick={() => {
+                                    setOpen(false);
+                                    changeContent('Contact');
+                                }}>Contact</MenuItem>
                                 <Divider sx={{ my: 3 }} />
                                 <MenuItem>
                                     <Button color="primary" variant="contained" fullWidth>

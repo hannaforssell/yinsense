@@ -1,5 +1,5 @@
 import { Box } from '@mui/material';
-import home from '/public/home.jpg'
+import home from '/home.jpg'
 
 export default function Home() {
     return (

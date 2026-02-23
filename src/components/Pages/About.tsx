@@ -1,5 +1,5 @@
-import about from '/public/about.jpg'
-import portrait from '/public/about-photo.jpg'
+import about from '/about.jpg'
+import portrait from '/about-photo.jpg'
 import { Box, CardMedia, Typography } from '@mui/material';
 
 export default function About() {
@@ -14,7 +14,10 @@ export default function About() {
             <Box
                 sx={{
                     display: 'flex',
-                    flexDirection: 'row',
+                    flexDirection: {
+                        xs: 'column',
+                        md: 'row',
+                    },
                     gap: 10,
                     alignItems: 'center',
                     justifyContent: 'center',
@@ -27,13 +30,17 @@ export default function About() {
                     alt="portrait"
                     image={portrait}
                     sx={{
-                        width: '400px',
+                        width: {
+                            xs: '150px',
+                            md: '400px'
+                        },
+                        maxWidth: '400px',
                     }}
                 />
                 <Typography sx={{
-                    width: '300px',
+                    maxWidth: '300px',
                 }}>
-                    Lorem ipsum dolor sit amet consectetur adipiscing elit nostra bibendum venenatis, faucibus cum eleifend sociosqu a vel pretium tempor vitae, ridiculus nulla posuere lectus praesent mollis gravida nam hac. Ridiculus sodales tempus rhoncus augue primis mi, pellentesque vel scelerisque vestibulum sapien praesent malesuada, conubia morbi sociis orci litora. Elementum nostra pretium curabitur hendrerit facilisi vel lacinia vulputate ante, arcu torquent in lacus tempor ridiculus dictum ut condimentum eget, a ultricies massa facilisis nascetur bibendum etiam curae.
+                    Lorem ipsum dolor sit amet consectetur adipiscing elit nostra bibendum venenatis, faucibus cum eleifend sociosqu a vel pretium tempor vitae, ridiculus nulla posuere lectus praesent mollis gravida nam hac. Ridiculus sodales tempus rhoncus augue primis mi, pellentesque vel scelerisque vestibulum sapien praesent malesuada, conubia morbi sociis orci litora.
                 </Typography>
             </Box>
         </Box>

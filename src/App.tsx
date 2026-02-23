@@ -1,8 +1,8 @@
+import Blog from "./Blog"
+
 function App() {
   return (
-    <>
-      
-    </>
+    <Blog />
   )
 }
 

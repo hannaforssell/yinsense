@@ -1,4 +1,3 @@
-import * as React from 'react';
 import about from '/public/about.jpg'
 import portrait from '/public/about-photo.jpg'
 import { Box, CardMedia, Typography } from '@mui/material';

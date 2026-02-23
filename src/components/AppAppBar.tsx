@@ -12,7 +12,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 import CloseRoundedIcon from '@mui/icons-material/CloseRounded';
 
 
-export default function AppAppBar({ changeContent = (content: string) => {} }) {
+export default function AppAppBar({ changeContent = (_content: string) => {} }) {
     const [open, setOpen] = React.useState(false);
 
     const toggleDrawer = (newOpen: boolean) => () => {

@@ -1,5 +1,4 @@
 import { Box } from '@mui/material';
-import * as React from 'react';
 import home from '/public/home.jpg'
 
 export default function Home() {

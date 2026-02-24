@@ -10,6 +10,9 @@ import MenuItem from '@mui/material/MenuItem';
 import Drawer from '@mui/material/Drawer';
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseRoundedIcon from '@mui/icons-material/CloseRounded';
+import { Avatar, ButtonBase } from '@mui/material';
+
+import logo from '/logo.avif'
 
 
 export default function AppAppBar({ changeContent = (_content: string) => { } }) {
@@ -32,9 +35,24 @@ export default function AppAppBar({ changeContent = (_content: string) => { } })
             <Container maxWidth="lg">
                 <Toolbar>
                     <Box sx={{ flexGrow: 1, display: 'flex', alignItems: 'center', px: 0 }}>
-                        <Button variant="text" color="info" size="large">
-                            LOGO
-                        </Button>
+                        <ButtonBase
+                            onClick={() => console.log("Image clicked")}
+                            sx={{
+                                borderRadius: 2,
+                                overflow: "hidden",
+                                display: "block"
+                            }}
+                        >
+                            <img
+                                src={logo}
+                                alt="Clickable"
+                                style={{
+                                    height: 80,
+                                    objectFit: "cover",
+                                    display: "block"
+                                }}
+                            />
+                        </ButtonBase>
                         <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
                             <Button onClick={() => { changeContent('Home') }} variant="text" color="primary" size="large">
                                 Home

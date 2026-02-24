@@ -22,7 +22,7 @@ export default function About() {
                     alignItems: 'center',
                     justifyContent: 'center',
                     padding: '16px',
-                    pt: '180px',
+                    pt: '8%',
                 }}
             >
                 <CardMedia
@@ -35,13 +35,17 @@ export default function About() {
                             md: '400px'
                         },
                         maxWidth: '400px',
+                        borderRadius: 100,
                     }}
                 />
-                <Typography sx={{
-                    maxWidth: '300px',
-                }}>
-                    Lorem ipsum dolor sit amet consectetur adipiscing elit nostra bibendum venenatis, faucibus cum eleifend sociosqu a vel pretium tempor vitae, ridiculus nulla posuere lectus praesent mollis gravida nam hac. Ridiculus sodales tempus rhoncus augue primis mi, pellentesque vel scelerisque vestibulum sapien praesent malesuada, conubia morbi sociis orci litora.
-                </Typography>
+                <Box sx={{ maxWidth: '300px' }}>
+                    <Typography variant='h5' pb={1}>
+                        About me
+                    </Typography>
+                    <Typography variant='body1'>
+                        Lorem ipsum dolor sit amet consectetur adipiscing elit nostra bibendum venenatis, faucibus cum eleifend sociosqu a vel pretium tempor vitae, ridiculus nulla posuere lectus praesent mollis gravida nam hac. Ridiculus sodales tempus rhoncus augue primis mi, pellentesque vel scelerisque vestibulum sapien praesent malesuada, conubia morbi sociis orci litora.
+                    </Typography>
+                </Box>
             </Box>
         </Box>
     );

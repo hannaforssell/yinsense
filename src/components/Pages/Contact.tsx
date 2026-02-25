@@ -1,4 +1,4 @@
-import { Box, Button, Container, Divider, FormControl, FormHelperText, Input, InputLabel, TextField, Typography } from '@mui/material';
+import { Box, Button, Container, TextField, Typography } from '@mui/material';
 import home from '/home.jpg'
 import * as React from 'react';
 
@@ -93,7 +93,10 @@ export default function Contact() {
             backgroundSize: "cover",
             width: "100vw",
             height: "100vh",
-            pt: '8%',
+            pt: {
+                xs: '30%',
+                md: '8%'
+            },
         }}>
             <Container sx={{
                 display: 'flex',
@@ -106,8 +109,11 @@ export default function Contact() {
                         gap: 5,
                         alignItems: 'center',
                         //justifyContent: 'center',
-                        padding: '40px',
-                        backgroundColor: 'white',
+                        padding: {
+                            xs: '20px',
+                            md: '40px'
+                        },
+                        backgroundColor: 'rgba(255, 255, 255, 0.8)',
                         width: '700px',
                         //height: '100%',
                     }}
@@ -116,7 +122,7 @@ export default function Contact() {
                     <Typography variant='body1'>
                         If you have any further questions about treatment services or bookings, feel free to contact me using the form below.
                     </Typography>
- 
+
                     <Box
                         component="form"
                         onSubmit={handleSubmit}

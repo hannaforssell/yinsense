@@ -22,7 +22,10 @@ export default function About() {
                     alignItems: 'center',
                     justifyContent: 'center',
                     padding: '16px',
-                    pt: '8%',
+                    pt: {
+                        xs: '30%',
+                        md: '8%'
+                    },
                 }}
             >
                 <CardMedia
@@ -35,7 +38,6 @@ export default function About() {
                             md: '400px'
                         },
                         maxWidth: '400px',
-                        borderRadius: 100,
                     }}
                 />
                 <Box sx={{ maxWidth: '300px' }}>

@@ -10,7 +10,7 @@ import MenuItem from '@mui/material/MenuItem';
 import Drawer from '@mui/material/Drawer';
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseRoundedIcon from '@mui/icons-material/CloseRounded';
-import { Avatar, ButtonBase } from '@mui/material';
+import { ButtonBase } from '@mui/material';
 
 import logo from '/logo.avif'
 

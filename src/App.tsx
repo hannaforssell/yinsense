@@ -26,7 +26,7 @@ const theme = createTheme({
 });
 
 export default function App() {
-    const [content, setContent] = React.useState('Contact');
+    const [content, setContent] = React.useState('Services');
 
     const changeContent = (content: string) => {
         setContent(content);

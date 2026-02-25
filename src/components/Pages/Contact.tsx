@@ -113,7 +113,7 @@ export default function Contact() {
                             xs: '20px',
                             md: '40px'
                         },
-                        backgroundColor: 'rgba(255, 255, 255, 0.8)',
+                        backgroundColor: 'rgba(255, 255, 255, 0.9)',
                         width: '700px',
                         //height: '100%',
                     }}

@@ -15,12 +15,21 @@ import { ButtonBase } from '@mui/material';
 import logo from '/logo.avif'
 
 
-export default function AppAppBar({ changeContent = (_content: string) => { } }) {
+export default function AppAppBar({
+  currPage,
+  changePage,
+}: {
+  currPage: string;
+  changePage: (nextPage: string) => void;
+}) {
     const [open, setOpen] = React.useState(false);
 
     const toggleDrawer = (newOpen: boolean) => () => {
         setOpen(newOpen);
     };
+
+    console.log(currPage);
+    
 
     return (
         <AppBar
@@ -36,7 +45,7 @@ export default function AppAppBar({ changeContent = (_content: string) => { } })
                 <Toolbar>
                     <Box sx={{ flexGrow: 1, display: 'flex', alignItems: 'center', px: 0 }}>
                         <ButtonBase
-                            onClick={() => console.log("Image clicked")}
+                            onClick={() => changePage('Home')}
                             sx={{
                                 borderRadius: 2,
                                 overflow: "hidden",
@@ -45,7 +54,7 @@ export default function AppAppBar({ changeContent = (_content: string) => { } })
                         >
                             <img
                                 src={logo}
-                                alt="Clickable"
+                                alt="logo"
                                 style={{
                                     height: 80,
                                     objectFit: "cover",
@@ -54,16 +63,16 @@ export default function AppAppBar({ changeContent = (_content: string) => { } })
                             />
                         </ButtonBase>
                         <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
-                            <Button onClick={() => { changeContent('Home') }} variant="text" color="primary" size="large">
+                            <Button onClick={() => { changePage('Home') }} variant="text" color="primary" size="large">
                                 Home
                             </Button>
-                            <Button onClick={() => { changeContent('About') }} variant="text" color="primary" size="large">
+                            <Button onClick={() => { changePage('About') }} variant="text" color="primary" size="large">
                                 About
                             </Button>
-                            <Button onClick={() => { changeContent('Services') }} variant="text" color="primary" size="large">
+                            <Button onClick={() => { changePage('Services') }} variant="text" color="primary" size="large">
                                 Services
                             </Button>
-                            <Button onClick={() => { changeContent('Contact') }} variant="text" color="primary" size="large" sx={{ minWidth: 0 }}>
+                            <Button onClick={() => { changePage('Contact') }} variant="text" color="primary" size="large" sx={{ minWidth: 0 }}>
                                 Contact
                             </Button>
                         </Box>
@@ -105,19 +114,19 @@ export default function AppAppBar({ changeContent = (_content: string) => { } })
                                 </Box>
                                 <MenuItem onClick={() => {
                                     setOpen(false);
-                                    changeContent('Home');
+                                    changePage('Home');
                                 }}>Home</MenuItem>
                                 <MenuItem onClick={() => {
                                     setOpen(false);
-                                    changeContent('About');
+                                    changePage('About');
                                 }}>About</MenuItem>
                                 <MenuItem onClick={() => {
                                     setOpen(false);
-                                    changeContent('Services');
+                                    changePage('Services');
                                 }}>Services</MenuItem>
                                 <MenuItem onClick={() => {
                                     setOpen(false);
-                                    changeContent('Contact');
+                                    changePage('Contact');
                                 }}>Contact</MenuItem>
                                 <Divider sx={{ my: 3 }} />
                                 <MenuItem>

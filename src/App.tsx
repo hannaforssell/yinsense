@@ -23,25 +23,32 @@ const theme = createTheme({
             contrastText: '#fff',
         },
     },
+    typography: {
+        h1: {
+            fontFamily: '"Source Serif 4", serif',
+            fontWeight: 500,
+            //fontStyle: 'italic',
+        },
+    },
 });
 
 export default function App() {
-    const [content, setContent] = React.useState('Services');
+    const [page, setPage] = React.useState('Home');
 
-    const changeContent = (content: string) => {
-        setContent(content);
+    const changePage = (content: string) => {
+        setPage(content);
     }
 
     return (
         <ThemeProvider theme={theme}>
             <CssBaseline enableColorScheme />
 
-            <AppAppBar changeContent={changeContent} />
+            <AppAppBar currPage={page} changePage={changePage} />
 
-            {content === 'Home' && <Home />}
-            {content === 'About' && <About />}
-            {content === 'Services' && <Services />}
-            {content === 'Contact' && <Contact />}
+            {page === 'Home' && <Home />}
+            {page === 'About' && <About />}
+            {page === 'Services' && <Services />}
+            {page === 'Contact' && <Contact />}
 
             <Footer />
         </ThemeProvider>

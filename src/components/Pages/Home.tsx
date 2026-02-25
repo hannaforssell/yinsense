@@ -9,6 +9,8 @@ export default function Home() {
             backgroundSize: "cover",
             width: "100vw",
             height: "100vh",
-        }}></Box>
+        }}>
+            {/* <Typography variant='h1'>Yinsense</Typography> */}
+        </Box>
     );
 }

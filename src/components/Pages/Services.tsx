@@ -9,14 +9,19 @@ export default function Services() {
             backgroundRepeat: "no-repeat",
             backgroundSize: "cover",
             width: "100vw",
-            height: "100vh",
+            minHeight: "100vh",
             pt: {
                 xs: '30%',
                 md: '8%'
             },
+            pb: '8%',
         }}>
             <Container sx={{
                 display: 'flex',
+                flexDirection: {
+                    xs: 'column',
+                    md: 'row'
+                },
                 justifyContent: 'center',
                 gap: 5,
             }}>

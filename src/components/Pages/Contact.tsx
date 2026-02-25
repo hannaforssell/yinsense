@@ -92,7 +92,7 @@ export default function Contact() {
             backgroundRepeat: "no-repeat",
             backgroundSize: "cover",
             width: "100vw",
-            height: "100vh",
+            minHeight: "100vh",
             pt: {
                 xs: '30%',
                 md: '8%'

@@ -8,7 +8,7 @@ export default function Home() {
             backgroundRepeat: "no-repeat",
             backgroundSize: "cover",
             width: "100vw",
-            height: "100vh",
+            minHeight: "100vh",
         }}>
             {/* <Typography variant='h1'>Yinsense</Typography> */}
         </Box>

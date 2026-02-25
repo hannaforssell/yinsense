@@ -9,7 +9,7 @@ export default function About() {
             backgroundRepeat: "no-repeat",
             backgroundSize: "cover",
             width: "100vw",
-            height: "100vh",
+            minHeight: "100vh",
         }}>
             <Box
                 sx={{

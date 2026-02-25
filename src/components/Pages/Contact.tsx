@@ -1,4 +1,4 @@
-import { Box, Button, Container, TextField, Typography } from '@mui/material';
+import { Box, Button, Card, CardContent, Container, TextField, Typography } from '@mui/material';
 import home from '/home.jpg'
 import * as React from 'react';
 
@@ -102,7 +102,92 @@ export default function Contact() {
                 display: 'flex',
                 justifyContent: 'center',
             }}>
-                <Box
+                <Card sx={{
+                    maxWidth: 800,
+                    padding: {
+                        xs: '20px',
+                        md: '40px'
+                    },
+                    mb: '10px'
+                }}>
+                    <CardContent sx={{
+                        maxWidth: 800,
+                        display: 'flex',
+                        flexDirection: 'column',
+                        gap: 5,
+                        alignItems: 'center',
+                    }}>
+                        <Typography gutterBottom variant="h4" component="div">
+                            Contact
+                        </Typography>
+                        <Typography variant="body1" sx={{ color: 'text.primary' }}>
+                            If you have any further questions about treatment services or bookings, feel free to contact me using the form below.
+                        </Typography>
+                        <Box
+                            component="form"
+                            onSubmit={handleSubmit}
+                            sx={{
+                                minWidth: '100%',
+                                margin: "0 auto",
+                                display: "flex",
+                                flexDirection: "column",
+                                gap: 3,
+                            }}
+                        >
+                            <TextField
+                                label="Name"
+                                name="name"
+                                value={formData.name}
+                                onChange={handleChange}
+                                error={!!errors.name}
+                                helperText={errors.name}
+                                fullWidth
+                            />
+
+                            <TextField
+                                label="Email"
+                                name="email"
+                                type="email"
+                                value={formData.email}
+                                onChange={handleChange}
+                                error={!!errors.email}
+                                helperText={errors.email}
+                                fullWidth
+                            />
+
+                            <TextField
+                                label="Subject"
+                                name="subject"
+                                value={formData.subject}
+                                onChange={handleChange}
+                                error={!!errors.subject}
+                                helperText={errors.subject}
+                                fullWidth
+                            />
+
+                            <TextField
+                                label="Message"
+                                name="message"
+                                multiline
+                                rows={4}
+                                value={formData.message}
+                                onChange={handleChange}
+                                error={!!errors.message}
+                                helperText={errors.message}
+                                fullWidth
+                            />
+
+                            <Button
+                                variant="contained"
+                                type="submit"
+                                disabled={loading}
+                            >
+                                {loading ? "Sending..." : "Send Message"}
+                            </Button>
+                        </Box>
+                    </CardContent>
+                </Card>
+                {/* <Box
                     sx={{
                         display: 'flex',
                         flexDirection: 'column',
@@ -186,7 +271,7 @@ export default function Contact() {
                         </Button>
                     </Box>
 
-                </Box>
+                </Box> */}
             </Container>
         </Box>
     );

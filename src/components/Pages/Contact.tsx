@@ -108,7 +108,7 @@ export default function Contact() {
                         xs: '20px',
                         md: '40px'
                     },
-                    mb: '10px'
+                    mb: '10px' // FIX THIS
                 }}>
                     <CardContent sx={{
                         maxWidth: 800,

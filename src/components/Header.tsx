@@ -15,12 +15,12 @@ import { ButtonBase } from '@mui/material';
 import logo from '/logo.avif'
 
 
-export default function AppAppBar({
-  currPage,
-  changePage,
+export default function Header({
+    currPage,
+    changePage,
 }: {
-  currPage: string;
-  changePage: (nextPage: string) => void;
+    currPage: string;
+    changePage: (nextPage: string) => void;
 }) {
     const [open, setOpen] = React.useState(false);
 
@@ -29,21 +29,22 @@ export default function AppAppBar({
     };
 
     console.log(currPage);
-    
+
 
     return (
         <AppBar
-            position="fixed"
+            position="relative"
             sx={{
-                boxShadow: 1,
-                bgcolor: 'white',
+                boxShadow: 0,
+                bgcolor: 'primary.light',
                 opacity: '70%',
                 backgroundImage: 'none',
             }}
         >
-            <Container maxWidth="lg">
+            <Container maxWidth={false}>
                 <Toolbar>
-                    <Box sx={{ flexGrow: 1, display: 'flex', alignItems: 'center', px: 0 }}>
+                    <Box sx={{ flexGrow: 1, display: 'flex', justifyContent: 'space-between', alignItems: 'center', px: '20px' }}
+                    >
                         <ButtonBase
                             onClick={() => changePage('Home')}
                             sx={{
@@ -76,17 +77,22 @@ export default function AppAppBar({
                                 Contact
                             </Button>
                         </Box>
+
+                        <Box>
+                            <Button color="primary" variant="contained" size="small" sx={{
+                                display: {
+                                    xs: "none",
+                                    md: "inline-flex",
+                                },
+                                "&:hover": {
+                                    backgroundColor: "secondary.main",
+                                },
+                            }}>
+                                Bookings
+                            </Button>
+                        </Box>
                     </Box>
-                    <Box>
-                        <Button color="primary" variant="contained" size="small" sx={{
-                            display: {
-                                xs: "none",
-                                md: "inline-flex",
-                            },
-                        }}>
-                            Sign up for newsletter
-                        </Button>
-                    </Box>
+
                     <Box sx={{ display: { xs: 'flex', md: 'none' }, gap: 1 }}>
                         <IconButton aria-label="Menu button" onClick={toggleDrawer(true)}>
                             <MenuIcon />
@@ -101,7 +107,7 @@ export default function AppAppBar({
                                 },
                             }}
                         >
-                            <Box sx={{ p: 2, backgroundColor: 'background.default' }}>
+                            <Box sx={{ p: 2, backgroundColor: 'primary.light' }}>
                                 <Box
                                     sx={{
                                         display: 'flex',
@@ -112,26 +118,26 @@ export default function AppAppBar({
                                         <CloseRoundedIcon />
                                     </IconButton>
                                 </Box>
-                                <MenuItem onClick={() => {
+                                <MenuItem sx={{ color: 'primary.main', fontSize: '18px' }} onClick={() => {
                                     setOpen(false);
                                     changePage('Home');
-                                }}>Home</MenuItem>
-                                <MenuItem onClick={() => {
+                                }}>HOME</MenuItem>
+                                <MenuItem sx={{ color: 'primary.main', fontSize: '18px' }} onClick={() => {
                                     setOpen(false);
                                     changePage('About');
-                                }}>About</MenuItem>
-                                <MenuItem onClick={() => {
+                                }}>ABOUT</MenuItem>
+                                <MenuItem sx={{ color: 'primary.main', fontSize: '18px' }} onClick={() => {
                                     setOpen(false);
                                     changePage('Services');
-                                }}>Services</MenuItem>
-                                <MenuItem onClick={() => {
+                                }}>SERVICES</MenuItem>
+                                <MenuItem sx={{ color: 'primary.main', fontSize: '18px' }} onClick={() => {
                                     setOpen(false);
                                     changePage('Contact');
-                                }}>Contact</MenuItem>
+                                }}>CONTACT</MenuItem>
                                 <Divider sx={{ my: 3 }} />
                                 <MenuItem>
-                                    <Button color="primary" variant="contained" fullWidth>
-                                        Sign up for newsletter
+                                    <Button color="primary" variant="contained" fullWidth sx={{ "&:hover": { backgroundColor: "secondary.main" } }}>
+                                        Bookings
                                     </Button>
                                 </MenuItem>
                             </Box>

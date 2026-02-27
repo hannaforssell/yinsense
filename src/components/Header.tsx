@@ -33,11 +33,10 @@ export default function Header({
 
     return (
         <AppBar
-            position="relative"
+            position="sticky"
             sx={{
                 boxShadow: 0,
                 bgcolor: 'primary.light',
-                opacity: '70%',
                 backgroundImage: 'none',
             }}
         >

@@ -13,7 +13,7 @@ export default function Banner() {
             <Container maxWidth="lg">
                 <Box sx={{ display: 'flex', justifyContent: 'center', py: '5px' }}>
                     <Typography variant='body2'>
-                        Acupuncture | Chinese Medicine
+                        Acupuncture & Chinese Medicine | Sydney, NSW
                     </Typography>
                 </Box>
             </Container>

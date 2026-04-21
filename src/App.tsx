@@ -8,6 +8,7 @@ import About from './components/Pages/About';
 import Services from './components/Pages/Services';
 import Contact from './components/Pages/Contact';
 import Banner from './components/Banner';
+import ComingSoon from './components/ComingSoon';
 
 const theme = createTheme({
     palette: {
@@ -45,6 +46,9 @@ export default function App() {
             <CssBaseline enableColorScheme />
 
             <Banner />
+            <ComingSoon />
+
+            {/* <Banner />
             <Header currPage={page} changePage={changePage} />
 
             {page === 'Home' && <Home />}
@@ -52,7 +56,7 @@ export default function App() {
             {page === 'Services' && <Services />}
             {page === 'Contact' && <Contact />}
 
-            <Footer />
+            <Footer /> */}
         </ThemeProvider>
     );
 }

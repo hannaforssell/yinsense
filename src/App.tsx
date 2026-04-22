@@ -1,12 +1,12 @@
-import * as React from 'react';
+//import * as React from 'react';
 import CssBaseline from '@mui/material/CssBaseline';
-import Header from './components/Header';
-import Footer from './components/Footer';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-import Home from './components/Pages/Home';
-import About from './components/Pages/About';
-import Services from './components/Pages/Services';
-import Contact from './components/Pages/Contact';
+// import Header from './components/Header';
+// import Footer from './components/Footer';
+// import Home from './components/Pages/Home';
+// import About from './components/Pages/About';
+// import Services from './components/Pages/Services';
+// import Contact from './components/Pages/Contact';
 import Banner from './components/Banner';
 import ComingSoon from './components/ComingSoon';
 
@@ -35,11 +35,11 @@ const theme = createTheme({
 });
 
 export default function App() {
-    const [page, setPage] = React.useState('Home');
+    //const [page, setPage] = React.useState('Home');
 
-    const changePage = (content: string) => {
-        setPage(content);
-    }
+    // const changePage = (content: string) => {
+    //     setPage(content);
+    // }
 
     return (
         <ThemeProvider theme={theme}>

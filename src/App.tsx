@@ -7,7 +7,7 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 // import About from './components/Pages/About';
 // import Services from './components/Pages/Services';
 // import Contact from './components/Pages/Contact';
-import Banner from './components/Banner';
+//import Banner from './components/Banner';
 import ComingSoon from './components/ComingSoon';
 
 const theme = createTheme({
@@ -45,7 +45,6 @@ export default function App() {
         <ThemeProvider theme={theme}>
             <CssBaseline enableColorScheme />
 
-            <Banner />
             <ComingSoon />
 
             {/* <Banner />
